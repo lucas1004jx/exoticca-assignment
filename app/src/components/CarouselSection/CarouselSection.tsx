@@ -15,7 +15,7 @@ export const CarouselSection: FC<Props> = ({
   buttonProps
 }) => {
   const { isMobile } = useScreen()
-  const { data, isLoading } = useReactQuery('market', 'https://api-es.exoticca.com/api/home')
+  const { data, isLoading } = useReactQuery('market', 'http://localhost:3001/products/uk')
 
   console.log('data-->', data)
   console.log('isLoading-->', isLoading)
