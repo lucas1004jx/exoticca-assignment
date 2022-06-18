@@ -4,21 +4,17 @@ import { Props } from './CarouselSection.model'
 import { Typography } from 'components/Typography'
 import { Button } from 'components/Button'
 import { Carousel } from 'components/Carousel/Carousel'
-import { Cards } from 'components/Carousel/__stories__/data'
 import { useScreen } from 'hooks/useScreen'
-import { useReactQuery } from 'hooks/useReactQuery'
 
 export const CarouselSection: FC<Props> = ({
   className = '',
   testId,
   headerProps,
-  buttonProps
+  buttonProps,
+  cards
 }) => {
   const { isMobile } = useScreen()
-  const { data, isLoading } = useReactQuery('market', 'http://localhost:3001/products/uk')
 
-  console.log('data-->', data)
-  console.log('isLoading-->', isLoading)
   return (
     <StyledCarouselSectionContainer className={className} data-testid={testId}>
           <StyledHeader>
@@ -43,7 +39,7 @@ export const CarouselSection: FC<Props> = ({
             </StyledButtonWrapper>
             )}
           </StyledHeader>
-            <Carousel cards={Cards}/>
+            <Carousel cards={cards}/>
     </StyledCarouselSectionContainer>
   )
 }

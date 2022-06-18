@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Card } from 'components/Card'
-import { DiscountTag } from 'components/DiscountTag'
 
 export default {
   title: 'Components/Card',
@@ -14,9 +13,9 @@ export const WithDiscount = Template.bind({})
 WithDiscount.args = {
   imgAreaProps: {
     imgSrc: 'https://d24l7zeiclq6su.cloudfront.net/img/p/13319/c284051.jpg',
-    tagComponent: <DiscountTag discount={55} />,
     imgTitle: 'Costa Rica, Guatemala & Mexico',
-    imgDescription: '17 days'
+    imgDescription: '17 days',
+    discountPercentage: 55
   },
   textAreaProps: {
     description: 'Secrets of Central America & Riviera Maya',

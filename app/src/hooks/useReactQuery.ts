@@ -12,7 +12,7 @@ const fetcher = async (url: string) => {
   }
 }
 
-export const useReactQuery = (queryName:string, url:string) => {
-  const queryResults = useQuery(queryName, () => fetcher(url))
+export const useReactQuery = <Data>(queryName:string, url:string) => {
+  const queryResults = useQuery<Data>(queryName, () => fetcher(url))
   return queryResults
 }

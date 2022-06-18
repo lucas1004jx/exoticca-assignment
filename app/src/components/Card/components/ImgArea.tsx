@@ -1,3 +1,4 @@
+import { DiscountTag } from 'components/DiscountTag'
 import { Typography } from 'components/Typography'
 import { FC } from 'react'
 import { ImgAreaProps } from '../Card.model'
@@ -5,16 +6,16 @@ import { StyledImg, StyledImgTitleWrapper, StyledTagWrapper } from '../Card.styl
 
 export const ImgArea:FC<ImgAreaProps> = ({
   imgSrc,
-  tagComponent,
   imgTitle,
-  imgDescription
+  imgDescription,
+  discountPercentage
 }) => {
   const hasImgInfo = imgTitle || imgDescription
   return (
         <>
-       {tagComponent && (
+       {discountPercentage && (
        <StyledTagWrapper>
-            {tagComponent}
+           <DiscountTag discount={discountPercentage} />
         </StyledTagWrapper>
        )}
 

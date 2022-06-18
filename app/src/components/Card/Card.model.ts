@@ -2,9 +2,10 @@ import { ComponentPropsBase, StyledPropsBase } from 'model/propsBase'
 
 export interface ImgAreaProps{
     imgSrc: string
-    tagComponent?: JSX.Element
     imgTitle?: string
     imgDescription?: string
+    discountPercentage?: number
+
 }
 
 export interface TextAreaProps{
