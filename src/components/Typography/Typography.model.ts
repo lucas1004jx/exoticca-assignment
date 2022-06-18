@@ -4,9 +4,9 @@ import {
   ColorShade,
   TypographyVariant,
   Align,
-  Color
+  Color,
+  FontStyle
 } from 'styled-components'
-import React from 'react'
 import { ComponentPropsBase, StyledPropsBase } from 'model/propsBase'
 
 type TextDecoration = 'underline' | 'overline' | 'line-through'
@@ -17,16 +17,17 @@ export interface Props extends ComponentPropsBase {
   color?: Color
   colorShade?: keyof ColorShade
   fontWeight?: FontWeight
+  fontStyle?:FontStyle
   textDecoration?: TextDecoration
   padding?: number[]
   capitalize?: boolean
-  children:React.ReactNode
 }
 
 export interface StyledProps extends StyledPropsBase, Pick<Props,
 |'colorShade'
 |'variant'
 |'fontWeight'
+|'fontStyle'
 |'align'
 |'gutterBottom'
 |'color'

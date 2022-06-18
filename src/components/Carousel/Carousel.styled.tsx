@@ -7,7 +7,7 @@ import { Card } from 'components/Card'
 export const StyledCarouselContainer = styled.div<StyledProps>`
     position:relative ;
     overflow:hidden ;
-    padding:${({ theme }:StyledProps) => theme.spacing(1, 4)} ;
+    padding:${({ theme }:StyledProps) => theme.spacing(1, 0)} ;
 `
 
 export const StyledControllerWrapper = styled.div<StyledProps>`

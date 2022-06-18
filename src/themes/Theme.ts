@@ -51,16 +51,17 @@ export const theme: Theme = {
       bold: 700
     },
     size: {
-      h1: '32px',
-      h2: '28px',
-      h3: '26px',
-      h4: '22px',
-      h5: '20px',
-      h6: '18px',
-      body: '16px',
-      bodyS: '14px',
-      bodyXS: '12px',
-      bodyL: '18px'
+      header: calcRem(48),
+      h1: calcRem(32),
+      h2: calcRem(28),
+      h3: calcRem(26),
+      h4: calcRem(22),
+      h5: calcRem(20),
+      h6: calcRem(18),
+      bodyL: calcRem(18),
+      body: calcRem(16),
+      bodyS: calcRem(14),
+      bodyXS: calcRem(12)
     }
   },
   borderRadius: {

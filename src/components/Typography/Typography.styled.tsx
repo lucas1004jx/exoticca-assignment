@@ -5,6 +5,7 @@ import { StyledProps } from './Typography.model'
 export const StyledTypographyContainer = styled.div<StyledProps>`
     font-size:${({ theme, variant }) => getFontSizeByVariant(theme, variant)};
     font-weight:${({ theme, fontWeight = 'regular' }) => theme.font.weight[fontWeight]};
+    font-style:${({ fontStyle = 'normal' }) => fontStyle};
     text-align:${({ align }) => align};
     margin:0;
     margin-bottom: ${({ theme, gutterBottom }) => theme.spacing(gutterBottom)};

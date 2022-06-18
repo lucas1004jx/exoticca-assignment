@@ -9,10 +9,10 @@ export const getButtonPaddingBySize = (
   size: ButtonSize | undefined = 'm'
 ) => {
   const spaces: Record<ButtonSize, number[]> = {
-    s: [1, 3],
-    m: [1.5, 3.5],
-    l: [1.8, 4],
-    xl: [2, 4.5]
+    s: [1, 5],
+    m: [1.5, 5.5],
+    l: [1.8, 6],
+    xl: [2, 6.5]
   }
 
   const space = spaces[size]

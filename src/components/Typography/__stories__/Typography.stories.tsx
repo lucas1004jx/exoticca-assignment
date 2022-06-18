@@ -8,6 +8,7 @@ export default {
 } as ComponentMeta<typeof Typography>
 
 const variantes: Record<TypographyVariant, string> = {
+  header: '48px',
   h1: '32px',
   h2: '28px',
   h3: '26px',

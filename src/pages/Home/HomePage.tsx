@@ -1,11 +1,22 @@
-import { Carousel } from 'components/Carousel'
 import { FC } from 'react'
-import { Cards } from 'components/Carousel/__stories__/data'
+import { StyledHomePageWrapper } from './HomePage.styled'
+import { CarouselSection } from 'components/CarouselSection'
 
 export const HomePage:FC = () => {
+  const carouselSetionProps = {
+    headerProps: {
+      text: 'Multi-country tours',
+      description: 'Explore our more than 17 nights multi-country tours. Let yourself be surprised by our extended version top sellers.'
+    },
+    buttonProps: {
+      text: 'See more trips',
+      description: '10 available trips',
+      onClick: () => {}
+    }
+  }
   return (
-        <div>
-            <Carousel cards={Cards}/>
-        </div>
+        <StyledHomePageWrapper>
+            <CarouselSection {...carouselSetionProps}/>
+        </StyledHomePageWrapper>
   )
 }

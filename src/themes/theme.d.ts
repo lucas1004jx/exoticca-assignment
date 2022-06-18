@@ -20,6 +20,7 @@ declare module 'styled-components' {
   export type Color = SemanticColor | BrandColor
 
   export type TypographyVariant =
+  | 'header'
   | 'h1'
   | 'h2'
   | 'h3'
@@ -32,6 +33,8 @@ declare module 'styled-components' {
   | 'bodyXS'
 
   export type FontWeight = 'light' | 'regular' | 'semibold' | 'bold'
+
+  export type FontStyle = 'italic' | 'normal'
 
   export type Size = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
 

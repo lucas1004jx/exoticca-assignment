@@ -5,6 +5,7 @@ import { TypographyVariant } from 'styled-components'
 
 const getTagByVariant = (variant: TypographyVariant) => {
   const tags: Record<TypographyVariant, keyof JSX.IntrinsicElements> = {
+    header: 'h1',
     h1: 'h1',
     h2: 'h2',
     h3: 'h3',
