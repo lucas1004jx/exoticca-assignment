@@ -1,8 +1,9 @@
+import { SvgIcon } from 'components/SvgIcon'
 import { Typography } from 'components/Typography'
 import { MouseEventHandler } from 'react'
 import { ButtonSize, TypographyVariant } from 'styled-components'
 import { Props } from './Button.model'
-import { StyledButton, StyledIcon } from './Button.styled'
+import { StyledButton } from './Button.styled'
 
 export const Button: React.FC<Props> = ({
   children,
@@ -39,7 +40,7 @@ export const Button: React.FC<Props> = ({
         onClick={handleOnClick}
       >
          {startIcon && (
-          <StyledIcon icon={startIcon} />
+          <SvgIcon icon={startIcon} />
          )}
         <Typography
         variant={buttonSizeToFontSize[size]}
@@ -47,7 +48,7 @@ export const Button: React.FC<Props> = ({
           {text}
         </Typography>
         {endIcon && (
-          <StyledIcon icon={endIcon} />
+          <SvgIcon icon={endIcon} />
         )}
       </StyledButton>
   )

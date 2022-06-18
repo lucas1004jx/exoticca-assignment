@@ -18,7 +18,7 @@ const GlobalStylesCss = css`
 
   body {
     min-height: 100vh;
-    background-color: ${({ theme }: Props) => theme.palette.semantic.background.base};
+    background-color: ${({ theme }: Props) => theme.palette.semantic.background.light};
     font-family: ${({ theme }: Props) => theme.font.family.main};
     font-size: inherit;
     font-weight: ${({ theme }: Props) => theme.font.weight.regular};

@@ -3,7 +3,6 @@ import { getColor } from 'util/styles/styles'
 import { StyledProps } from './Button.model'
 import { withAlphaHex } from 'with-alpha-hex'
 import { flexCenter } from 'util/styles'
-import { SvgIcon } from 'components/SvgIcon'
 
 export const getButtonPaddingBySize = (
   theme: Theme,
@@ -27,6 +26,7 @@ export const StyledButton = styled.button<StyledProps>`
  border:none;
  border-radius:${({ theme }) => theme.borderRadius.xs};
  ${flexCenter()}
+ gap:${({ theme }:StyledProps) => theme.spacing(1)};
  &:hover {
     box-shadow: inset 0px 250px 0px ${({ theme }:StyledProps) => withAlphaHex(theme.palette.semantic.shadow.base, 0.3)};
   };
@@ -46,8 +46,4 @@ export const StyledButton = styled.button<StyledProps>`
   color: ${color ? getColor(theme, color) : theme.palette.semantic.text.base};
   background:transparent;
 `}
-`
-
-export const StyledIcon = styled(SvgIcon)`
-  margin-left: ${({ theme }) => theme.spacing(0.5)};
 `

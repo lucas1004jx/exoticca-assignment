@@ -1,5 +1,6 @@
 import { Theme } from 'styled-components'
 import { calcRem } from 'util/styles/styles'
+import { withAlphaHex } from 'with-alpha-hex'
 
 const spacingBaseUnit = 8
 
@@ -10,9 +11,7 @@ export const theme: Theme = {
         base: '#1b306f'
       },
       secondary: {
-        light: '#c6f16d',
-        base: '#4c878c',
-        dark: '#4c878c'
+        base: '#1b306f'
       }
     },
     semantic: {
@@ -23,8 +22,7 @@ export const theme: Theme = {
       },
       background: {
         light: '#fff',
-        base: '#f9fafa',
-        dark: '#E8E8E8'
+        base: '#2a2a2a'
       },
       error: {
         light: '#f44336',
@@ -38,6 +36,9 @@ export const theme: Theme = {
       },
       shadow: {
         base: '#101213'
+      },
+      highlight: {
+        base: '#e8cb91'
       }
     }
   },
@@ -69,6 +70,12 @@ export const theme: Theme = {
     m: calcRem(20),
     l: '25%',
     xl: '100%'
+  },
+  shadows: {
+    none: 'none',
+    xs: `0px 1px 2px ${withAlphaHex('#000', 0.3)}`,
+    s: `0px 2px 4px ${withAlphaHex('#000', 0.3)}`,
+    m: `0px 4px 6px ${withAlphaHex('#000', 0.3)}`
   },
   spacing: (...args) => {
     const length = args.length

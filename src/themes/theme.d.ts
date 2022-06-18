@@ -15,6 +15,7 @@ declare module 'styled-components' {
   | 'error'
   | 'border'
   | 'shadow'
+  | 'highlight'
 
   export type Color = SemanticColor | BrandColor
 
@@ -51,6 +52,13 @@ declare module 'styled-components' {
   | 'xl'
   >
 
+  export type Shadows = Extract<Size,
+  | 'none'
+  | 'xs'
+  | 's'
+  | 'm'
+  >
+
 export type ButtonSize = Extract<Size, 's' | 'm' | 'l' | 'xl'>
 export type InputSize = Extract<Size, 's' | 'm' | 'l' >
 
@@ -74,6 +82,7 @@ export type Shape = 'sharp' | 'soft' | 'curved' | 'softCurved' | 'rounded'
     },
     spacing: (...args: number[]) => string,
     borderRadius: Record<Radius, string>,
+    shadows: Record<Shadows, string>,
   }
 
 }
