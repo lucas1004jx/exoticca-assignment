@@ -7,6 +7,8 @@ export const StyledCardContainer = styled.div<StyledProps>`
     min-width:${calcRem(285)} ;
     box-shadow:${({ theme }:StyledProps) => theme.shadows.xs};
     ${flex('column', 0)};
+    border-radius:${({ theme }:StyledProps) => theme.borderRadius.s};
+    overflow:hidden ;
 `
 
 export const StyledImgWrapper = styled.div`

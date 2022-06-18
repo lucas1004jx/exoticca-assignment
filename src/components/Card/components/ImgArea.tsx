@@ -21,13 +21,13 @@ export const ImgArea:FC<ImgAreaProps> = ({
        {hasImgInfo && (
        <StyledImgTitleWrapper>
         {imgTitle && (
-        <Typography variant='h4' fontWeight='bold' colorShade='light'>
+        <Typography variant='h4' fontWeight='bold' color='text' colorShade='light'>
             {imgTitle}
         </Typography>
         )}
 
         {imgDescription && (
-        <Typography colorShade='light'>
+        <Typography color='text' colorShade='light'>
             {imgDescription}
         </Typography>
         )}
