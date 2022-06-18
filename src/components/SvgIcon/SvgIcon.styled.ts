@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { calcRem, getColor } from 'util/styles'
+import { getColor } from 'util/styles'
 import { StyledProps } from './SvgIcon.model'
 
 export const StyledIconWrapper = styled.span<StyledProps>`
  line-height:0 ;
 & > svg {
-    height: ${calcRem(16)};
-    width: ${calcRem(16)};
+    height: ${({ theme, size = 's' }) => theme.icon[size]};
+    width: ${({ theme, size = 's' }) => theme.icon[size]};
     color:${({ theme, color, colorShade = 'base' }) => getColor(theme, color, colorShade)};
     fill:none;
 }

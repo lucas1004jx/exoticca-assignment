@@ -8,7 +8,8 @@ export const SvgIcon:FC<Props> = ({
   className,
   testId,
   color,
-  colorShade,
+  colorShade = 'base',
+  size = 's',
   ...props
 }) => {
   const IconComponent = icons[icon]
@@ -19,6 +20,7 @@ export const SvgIcon:FC<Props> = ({
       data-testid={testId}
        color={color}
        colorShade={colorShade}
+       size={size}
        >
     <IconComponent {...props}/>
   </StyledIconWrapper>)

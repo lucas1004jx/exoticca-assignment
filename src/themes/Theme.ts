@@ -77,6 +77,11 @@ export const theme: Theme = {
     s: `0px 2px 4px ${withAlphaHex('#000', 0.3)}`,
     m: `0px 4px 6px ${withAlphaHex('#000', 0.3)}`
   },
+  icon: {
+    s: calcRem(16),
+    m: calcRem(24),
+    l: calcRem(32)
+  },
   spacing: (...args) => {
     const length = args.length
     if (length < 1 || length > 4) return '0px'

@@ -35,14 +35,6 @@ declare module 'styled-components' {
 
   export type Size = 'none' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
 
-  export type IconSizes = Extract<Size,
-  | 'xs'
-  | 's'
-  | 'm'
-  | 'l'
-  | 'xl'
-  >
-
   export type Radius = Extract<Size,
   | 'none'
   | 'xs'
@@ -60,7 +52,11 @@ declare module 'styled-components' {
   >
 
 export type ButtonSize = Extract<Size, 's' | 'm' | 'l' | 'xl'>
-export type InputSize = Extract<Size, 's' | 'm' | 'l' >
+export type IconSize = Extract<Size,
+| 's'
+| 'm'
+| 'l'
+>
 
 export type ButtonVariant = 'contained' | 'outlined' | 'text'
 
@@ -83,6 +79,7 @@ export type Shape = 'sharp' | 'soft' | 'curved' | 'softCurved' | 'rounded'
     spacing: (...args: number[]) => string,
     borderRadius: Record<Radius, string>,
     shadows: Record<Shadows, string>,
+    icon:Record<IconSize, string>
   }
 
 }

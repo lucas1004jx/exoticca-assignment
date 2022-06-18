@@ -13,6 +13,10 @@ export default {
     color: {
       options: ['primary', 'secondary', 'text'],
       control: { type: 'radio' }
+    },
+    size: {
+      options: ['s', 'm', 'l'],
+      control: { type: 'radio' }
     }
   }
 } as ComponentMeta<typeof SvgIcon>

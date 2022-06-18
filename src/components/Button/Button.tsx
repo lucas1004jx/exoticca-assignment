@@ -1,9 +1,9 @@
 import { SvgIcon } from 'components/SvgIcon'
-import { Typography } from 'components/Typography'
 import { MouseEventHandler } from 'react'
 import { ButtonSize, TypographyVariant } from 'styled-components'
 import { Props } from './Button.model'
 import { StyledButton } from './Button.styled'
+import { Typography } from 'components/Typography'
 
 export const Button: React.FC<Props> = ({
   children,

@@ -18,7 +18,7 @@ export const getColor = (
   colorShade: keyof ColorShade = 'base'
 ) => {
   const palette = theme.palette
-  if (!color) return undefined
+  if (!color) return 'currentColor'
   else if (color === 'primary' || color === 'secondary') return palette.brand[color][colorShade]
   else return palette?.semantic[color]?.[colorShade]
 }
