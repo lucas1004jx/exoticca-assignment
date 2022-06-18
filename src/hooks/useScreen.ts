@@ -1,11 +1,11 @@
 import { useMediaQuery } from 'react-responsive'
 
 export const useScreen = () => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1800px)' })
-  const isMediumScreen = useMediaQuery({ query: '(min-width: 1400px)' })
-  const isSmallScreen = useMediaQuery({ query: '(min-width: 1000px)' })
-  const isTablet = useMediaQuery({ query: '(min-width: 700px)' })
-  const isMobile = useMediaQuery({ query: '(min-width: 0px)' })
+  const isBigScreen = useMediaQuery({ minWidth: 1800 })
+  const isMediumScreen = useMediaQuery({ minWidth: 1400, maxWidth: 1799 })
+  const isSmallScreen = useMediaQuery({ minWidth: 1000, maxWidth: 1399 })
+  const isTablet = useMediaQuery({ minWidth: 700, maxWidth: 999 })
+  const isMobile = useMediaQuery({ minWidth: 0, maxWidth: 699 })
 
   return {
     isBigScreen,
