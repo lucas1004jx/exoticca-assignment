@@ -1,18 +1,25 @@
 import { FC } from 'react'
-import { StyledCardContainer, StyledImg, StyledImgWrapper } from './Card.styled'
+import { StyledCardContainer, StyledImgWrapper, StyledTextWrapper } from './Card.styled'
 import { Props } from './Card.model'
+
+import { ImgArea } from './components/ImgArea'
+import { TextArea } from './components/TextArea'
 
 export const Card: FC<Props> = ({
   className = '',
   testId,
-  imgSrc
+  imgAreaProps,
+  textAreaProps
 }) => {
   return (
     <StyledCardContainer className={className} data-testid={testId}>
       <StyledImgWrapper>
-
-      <StyledImg src={imgSrc}/>
+      <ImgArea {...imgAreaProps}/>
       </StyledImgWrapper>
+
+      <StyledTextWrapper>
+        <TextArea {...textAreaProps}/>
+      </StyledTextWrapper>
 
     </StyledCardContainer>
   )

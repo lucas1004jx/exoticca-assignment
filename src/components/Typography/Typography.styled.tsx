@@ -8,7 +8,7 @@ export const StyledTypographyContainer = styled.div<StyledProps>`
     text-align:${({ align }) => align};
     margin:0;
     margin-bottom: ${({ theme, gutterBottom }) => theme.spacing(gutterBottom)};
-    color:${({ theme, color, colorShade }:StyledProps) => getColor(theme, color, colorShade) ?? 'currentColor'} ;
+    color:${({ theme, color = 'text', colorShade }:StyledProps) => getColor(theme, color, colorShade) ?? 'currentColor'} ;
     text-decoration:${({ textDecoration }) => textDecoration};
     padding:${({ padding, theme }: StyledProps) => padding ? theme.spacing(...padding) : 0};
     text-transform:${({ capitalize }) => capitalize ? 'capitalize' : 'none'} ;
