@@ -7,8 +7,12 @@ export interface Props extends ComponentPropsBase {
 }
 
 export interface ControlerProps {
-    direction: 'left' | 'right'
+    direction: 'left' | 'right',
+    onClick: () => void
 }
 
 export interface StyledProps extends StyledPropsBase,
-PickOptional<ControlerProps, 'direction'> {}
+PickOptional<ControlerProps, 'direction'> {
+    currentSlide?: number
+    slidesOnTheScreen?: number
+}

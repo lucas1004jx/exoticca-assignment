@@ -41,14 +41,17 @@ export const StyledIcon = styled(SvgIcon)<StyledProps>`
 
 export const StyledCarouselInnerWrapper = styled.div<StyledProps>`
     display:flex ;
+    transform:${({ currentSlide = 0, slidesOnTheScreen = 1 }:StyledProps) => `translateX(calc(100% / ${slidesOnTheScreen} * ${-currentSlide}) )`};
+    transition:transform 0.5s ease-in-out;
 
 `
 
 export const StyledCardWrapper = styled.div<StyledProps>`
-    width:calc(100% / 5.5);
+    width:${({ slidesOnTheScreen }) => `calc(100% / ${slidesOnTheScreen})`};
     flex-shrink:0;
 `
 
 export const StyledCard = styled(Card)`
+    min-width:auto ;
     margin-right: ${({ theme }:StyledProps) => theme.spacing(6)};
 `
