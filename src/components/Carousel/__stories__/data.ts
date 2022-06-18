@@ -7,7 +7,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -18,7 +19,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -29,7 +31,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -40,7 +43,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -51,7 +55,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -62,7 +67,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -73,7 +79,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -84,7 +91,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -95,7 +103,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   },
   {
@@ -106,7 +115,8 @@ export const Cards = [
     },
     textAreaProps: {
       description: 'Secrets of Central America & Riviera Maya',
-      originalPrice: 5399
+      originalPrice: 5399,
+      discountedPrice: 3199
     }
   }
 ]

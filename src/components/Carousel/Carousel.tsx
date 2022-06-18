@@ -31,8 +31,6 @@ export const Carousel: FC<Props> = ({
     setCurrentSlide(slide => slide + 1)
   }
 
-  console.log('getSlideOnTheScreen', getSlideOnTheScreen())
-
   return (
     <StyledCarouselContainer className={className} data-testid={testId}>
       {currentSlide > 0 && <Controller direction='left' onClick={handleSlideLeft}/>}
