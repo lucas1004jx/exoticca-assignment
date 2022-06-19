@@ -10,6 +10,8 @@ export const StyledCarouselSectionContainer = styled.div<StyledProps>`
 export const StyledHeader = styled.div`
     ${flex()}
     align-items:baseline ;
+    justify-content:space-between;
+    margin-bottom:${({ theme }:StyledProps) => theme.spacing(3)} ;
 `
 
 export const StyledButtonWrapper = styled.div`

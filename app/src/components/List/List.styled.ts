@@ -4,7 +4,7 @@ import { StyledProps } from './List.model'
 
 export const StyledDropdownListWrapper = styled.div<StyledProps>`
     background:${({ theme }:StyledProps) => theme.palette.semantic.background.light} ;
-    border:4px solid ${({ theme }: StyledProps) => theme.palette.semantic.border.light};
+    border:1px solid ${({ theme }: StyledProps) => theme.palette.semantic.border.light};
     border-radius: ${({ theme }:StyledProps) => theme.borderRadius.xs};
 `
 

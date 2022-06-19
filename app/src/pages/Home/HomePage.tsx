@@ -1,12 +1,12 @@
 import { FC, useState } from 'react'
-import { StyledHomePageWrapper } from './HomePage.styled'
+import { StyledDropdown, StyledHeroImgWrapper, StyledHomePageWrapper } from './HomePage.styled'
 import { CarouselSection } from 'components/CarouselSection'
 import { useReactQuery } from 'hooks/useReactQuery'
 import { Product } from 'model/serverModal/product.model'
 import { buildCardData } from 'util/builder/buildCardData'
-import { Dropdown } from 'components/Dropdown'
 import { Option } from 'model/common'
 import { ES_MARKET, UK_MARKET } from 'constants/api-constants'
+import { Typography } from 'components/Typography'
 
 export const HomePage:FC = () => {
   const [market, setMarket] = useState('es')
@@ -56,17 +56,17 @@ export const HomePage:FC = () => {
     setMarket(option.id)
   }
 
-  if (isLoading) return <div>Loading...</div>
-
   return (
         <StyledHomePageWrapper>
-          <Dropdown
+          <StyledHeroImgWrapper >
+          <StyledDropdown
           items={markets}
            iconDescription='Select market'
            onSetSelectedItem={handleSelectMarket}
            defaultSelectedOption={markets[0]}
            />
-            <CarouselSection {...carouselSetionProps} cards={cardsData}/>
+          </StyledHeroImgWrapper>
+           {!isLoading ? <CarouselSection {...carouselSetionProps} cards={cardsData}/> : <Typography>Loading products</Typography>}
         </StyledHomePageWrapper>
   )
 }

@@ -15,5 +15,5 @@ export const StyledDropDownList = styled(List)`
   position:absolute ;
   width:100% ;
   bottom:0 ;
-  transform:translateY(calc(100% + ${({ theme }:StyledProps) => theme.spacing(0.5)}));
+  transform:translateY(100%);
 `
