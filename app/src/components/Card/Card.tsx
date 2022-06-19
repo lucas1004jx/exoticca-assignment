@@ -4,15 +4,18 @@ import { Props } from './Card.model'
 
 import { ImgArea } from './components/ImgArea'
 import { TextArea } from './components/TextArea'
+import { Link } from 'components/Link'
 
-export const Card: FC<Props> = ({
+const CardComponent:FC<Props> = ({
   className = '',
   testId,
   imgAreaProps,
-  textAreaProps
+  textAreaProps,
+  onClick,
+  link
 }) => {
   return (
-    <StyledCardContainer className={className} data-testid={testId}>
+    <StyledCardContainer className={className} data-testid={testId} hasAction={!!onClick || !!link}>
       <StyledImgWrapper>
       <ImgArea {...imgAreaProps}/>
       </StyledImgWrapper>
@@ -22,5 +25,15 @@ export const Card: FC<Props> = ({
       </StyledTextWrapper>
 
     </StyledCardContainer>
+  )
+}
+
+export const Card: FC<Props> = (props) => {
+  return (
+    <>
+    {props.link
+      ? <Link to={props.link} underline={false}><CardComponent {...props}/></Link>
+      : <CardComponent {...props}/>}
+    </>
   )
 }

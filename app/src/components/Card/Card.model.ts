@@ -13,9 +13,13 @@ export interface TextAreaProps{
     discountedPrice: number
 }
 export interface Props extends ComponentPropsBase {
+    id:string | number
     imgAreaProps:ImgAreaProps
     textAreaProps:TextAreaProps
+    link?:string
     onClick?:()=>void
 }
 
-export interface StyledProps extends StyledPropsBase {}
+export interface StyledProps extends StyledPropsBase {
+    hasAction?:boolean
+}

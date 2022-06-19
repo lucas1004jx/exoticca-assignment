@@ -5,10 +5,12 @@ import { displayDays } from 'util/functions/displayUnit'
 
 export const buildCardData = (card:Card):CardProps => {
   const {
+    id,
     destination,
     images,
     title,
     days,
+    url,
     priceDetail: { fromPrice, discountSaved, pricingPercentage }
   } = card
   const imgAreaProps = {
@@ -23,7 +25,9 @@ export const buildCardData = (card:Card):CardProps => {
     discountedPrice: fromPrice
   }
   return ({
+    id,
     imgAreaProps,
-    textAreaProps
+    textAreaProps,
+    link: url
   })
 }

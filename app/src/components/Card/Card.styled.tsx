@@ -9,6 +9,7 @@ export const StyledCardContainer = styled.div<StyledProps>`
     ${flex('column', 0)};
     border-radius:${({ theme }:StyledProps) => theme.borderRadius.s};
     overflow:hidden ;
+    cursor: ${({ hasAction }:StyledProps) => hasAction ? 'cursor' : 'default'};
 `
 
 export const StyledImgWrapper = styled.div`

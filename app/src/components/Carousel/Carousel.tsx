@@ -2,7 +2,6 @@ import { FC, useState } from 'react'
 import { StyledCard, StyledCardWrapper, StyledCarouselContainer, StyledCarouselInnerWrapper } from './Carousel.styled'
 import { Props } from './Carousel.model'
 import { Controller } from './components/Controller'
-import uniqid from 'uniqid'
 import { useScreen } from 'hooks/useScreen'
 
 export const Carousel: FC<Props> = ({
@@ -37,7 +36,7 @@ export const Carousel: FC<Props> = ({
       {currentSlide < cards.length - getSlideOnTheScreen() && <Controller direction='right' onClick={handleSlideRight}/>}
       <StyledCarouselInnerWrapper currentSlide={currentSlide} slidesOnTheScreen={getSlideOnTheScreen()}>
         {cards.map((card) => (
-        <StyledCardWrapper key={uniqid()} slidesOnTheScreen={getSlideOnTheScreen()} >
+        <StyledCardWrapper key={card.id} slidesOnTheScreen={getSlideOnTheScreen()}>
           <StyledCard {...card} />
           </StyledCardWrapper>
         ))}

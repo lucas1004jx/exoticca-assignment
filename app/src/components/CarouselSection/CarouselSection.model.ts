@@ -1,9 +1,9 @@
 
 import { ComponentPropsBase, StyledPropsBase } from 'model/propsBase'
-import { Props as CardProps } from 'components/Card'
+import { Props as CarouselProps } from 'components/Carousel'
 
-export interface Props extends ComponentPropsBase {
-    cards: CardProps[]
+export interface Props extends ComponentPropsBase,
+Pick<CarouselProps, 'cards'> {
     headerProps?: {
         text: string
         description: string

@@ -39,7 +39,7 @@ export const CarouselSection: FC<Props> = ({
             </StyledButtonWrapper>
             )}
           </StyledHeader>
-            <Carousel cards={cards}/>
+            <Carousel cards={cards} />
     </StyledCarouselSectionContainer>
   )
 }
