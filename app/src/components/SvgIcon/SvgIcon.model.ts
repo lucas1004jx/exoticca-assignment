@@ -1,7 +1,7 @@
 import { ComponentPropsBase, StyledPropsBase } from 'model/propsBase'
 import { Color, ColorShade, IconSize } from 'styled-components'
 
-export type IconName = 'arrowRight' | 'arrowRight2'
+export type IconName = 'arrowRight' | 'arrowRight2'| 'arrowDown'
 
 export interface Props extends ComponentPropsBase, React.SVGProps<SVGSVGElement> {
     icon: IconName
