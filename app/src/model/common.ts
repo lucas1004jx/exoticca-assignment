@@ -4,3 +4,7 @@ export interface Option {
     name: string
     group?: string
 }
+
+export interface ListOption {
+  separator?: boolean
+}

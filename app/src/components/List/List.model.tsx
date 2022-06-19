@@ -1,11 +1,11 @@
 import { ComponentPropsBase, StyledPropsBase } from 'model/propsBase'
-import { Option } from 'model/common'
+import { Option, ListOption } from 'model/common'
 
 export interface Props extends ComponentPropsBase{
     items:Option[]
     onSelect?:(option:Option)=>void
     keyword?:string
-    separator?:boolean
+    listOption:ListOption
 }
 
-export interface StyledProps extends StyledPropsBase, Pick<Props, 'separator'>{}
+export interface StyledProps extends StyledPropsBase, ListOption{}
