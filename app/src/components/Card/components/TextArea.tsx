@@ -9,8 +9,8 @@ export const TextArea:FC<TextAreaProps> = ({
   originalPrice,
   discountedPrice
 }) => {
-  const onlyHasOriginalPrice = originalPrice && !discountedPrice
-  const hasDiscount = originalPrice && discountedPrice
+  const hasDiscount = originalPrice !== discountedPrice
+
   return (
         <>
        {description && (
@@ -19,12 +19,12 @@ export const TextArea:FC<TextAreaProps> = ({
         </Typography>
        )}
         {
-            onlyHasOriginalPrice && (
+            !hasDiscount && (
                 <StyledPriceWrapper>
                 <Typography variant='bodyS'>
                     From
                 </Typography>
-                <Typography variant='body' fontWeight='bold'>
+                <Typography variant='h4' fontWeight='bold'>
                      {displayPrice(originalPrice)}
                 </Typography>
                 </StyledPriceWrapper>

@@ -13,7 +13,7 @@ export const ImgArea:FC<ImgAreaProps> = ({
   const hasImgInfo = imgTitle || imgDescription
   return (
         <>
-       {discountPercentage && (
+       {!!discountPercentage && (
        <StyledTagWrapper>
            <DiscountTag discount={discountPercentage} />
         </StyledTagWrapper>
