@@ -1,5 +1,7 @@
 
 import axios from 'axios'
+import { BASE_URL } from 'constants/api-constants'
+import { ApiParams } from 'model/common'
 import { useQuery } from 'react-query'
 
 const fetcher = async (url: string) => {
@@ -12,7 +14,8 @@ const fetcher = async (url: string) => {
   }
 }
 
-export const useReactQuery = <Data>(queryName:string, url:string) => {
-  const queryResults = useQuery<Data>(queryName, () => fetcher(url))
+export const useReactQuery = <Data>({ queryKey, url, options }:ApiParams<Data>) => {
+  const completedUrl = `${BASE_URL}${url}`
+  const queryResults = useQuery<Data>(queryKey, () => fetcher(completedUrl), options)
   return queryResults
 }

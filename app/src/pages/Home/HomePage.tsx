@@ -6,26 +6,25 @@ import { Product } from 'model/serverModal/product.model'
 import { buildCardData } from 'util/builder/buildCardData'
 import { Dropdown } from 'components/Dropdown'
 import { Option } from 'model/common'
+import { ES_MARKET, UK_MARKET } from 'constants/api-constants'
 
 export const HomePage:FC = () => {
   const [market, setMarket] = useState('es')
 
-  const getUrl = (market:string) => {
+  const getApiParams = (market:string) => {
     switch (market) {
       case 'es':
-        return 'http://localhost:3001/products/es'
+        return ES_MARKET
 
       case 'uk':
-        return 'http://localhost:3001/products/uk'
+        return UK_MARKET
 
       default:
-        return 'http://localhost:3001/products/es'
+        return ES_MARKET
     }
   }
 
-  const queryName = `market-${market}`
-
-  const { data, isLoading } = useReactQuery<Product>(queryName, getUrl(market))
+  const { data, isLoading } = useReactQuery<Product>(getApiParams(market))
 
   const cardsData = isLoading ? [] : data?.topSales.cards.map(buildCardData) ?? []
 
@@ -56,6 +55,8 @@ export const HomePage:FC = () => {
     if (!option) return
     setMarket(option.id)
   }
+
+  if (isLoading) return <div>Loading...</div>
 
   return (
         <StyledHomePageWrapper>
