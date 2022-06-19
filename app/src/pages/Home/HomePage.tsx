@@ -1,19 +1,33 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { StyledHomePageWrapper } from './HomePage.styled'
 import { CarouselSection } from 'components/CarouselSection'
 import { useReactQuery } from 'hooks/useReactQuery'
 import { Product } from 'model/serverModal/product.model'
 import { buildCardData } from 'util/builder/buildCardData'
+import { Dropdown } from 'components/Dropdown'
+import { Option } from 'model/common'
 
 export const HomePage:FC = () => {
-  const { data, isLoading } = useReactQuery<Product>('market', 'http://localhost:3001/products/uk')
+  const [market, setMarket] = useState('es')
 
-  console.log('data-->', data)
-  console.log('isLoading-->', isLoading)
+  const getUrl = (market:string) => {
+    switch (market) {
+      case 'es':
+        return 'http://localhost:3001/products/es'
+
+      case 'uk':
+        return 'http://localhost:3001/products/uk'
+
+      default:
+        return 'http://localhost:3001/products/es'
+    }
+  }
+
+  const queryName = `market-${market}`
+
+  const { data, isLoading } = useReactQuery<Product>(queryName, getUrl(market))
 
   const cardsData = isLoading ? [] : data?.topSales.cards.map(buildCardData) ?? []
-
-  console.log('cardsData-->', cardsData)
 
   const carouselSetionProps = {
     headerProps: {
@@ -26,8 +40,31 @@ export const HomePage:FC = () => {
       onClick: () => {}
     }
   }
+
+  const markets:Option[] = [
+    {
+      id: 'es',
+      name: 'Spain'
+    },
+    {
+      id: 'uk',
+      name: 'United Kingdom'
+    }
+  ]
+
+  const handleSelectMarket = (option:Option | undefined) => {
+    if (!option) return
+    setMarket(option.id)
+  }
+
   return (
         <StyledHomePageWrapper>
+          <Dropdown
+          items={markets}
+           iconDescription='Select market'
+           onSetSelectedItem={handleSelectMarket}
+           defaultSelectedOption={markets[0]}
+           />
             <CarouselSection {...carouselSetionProps} cards={cardsData}/>
         </StyledHomePageWrapper>
   )
