@@ -8,4 +8,5 @@ export interface ComponentPropsBase {
 
 export interface StyledPropsBase {
   theme: Theme
+  isMobile?:boolean
 }

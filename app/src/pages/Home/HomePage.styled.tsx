@@ -24,7 +24,7 @@ export const StyledHeroImgWrapper = styled.div<StyledPropsBase>`
     ${flexCenter()}
 `
 
-export const StyledDropdown = styled(Dropdown)`
-    width:${calcRem(450)} ;
+export const StyledDropdown = styled(Dropdown)<StyledPropsBase>`
+    width:${({ isMobile }:StyledPropsBase) => isMobile ? calcRem(300) : calcRem(450)}
 
 `

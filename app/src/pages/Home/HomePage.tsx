@@ -7,8 +7,10 @@ import { buildCardData } from 'util/builder/buildCardData'
 import { Option } from 'model/common'
 import { ES_MARKET, UK_MARKET } from 'constants/api-constants'
 import { Typography } from 'components/Typography'
+import { useScreen } from 'hooks/useScreen'
 
 export const HomePage:FC = () => {
+  const { isMobile } = useScreen()
   const [market, setMarket] = useState('es')
 
   const getApiParams = (market:string) => {
@@ -31,7 +33,7 @@ export const HomePage:FC = () => {
   const carouselSetionProps = {
     headerProps: {
       text: 'Multi-country tours',
-      description: 'Explore our more than 17 nights multi-country tours. Let yourself be surprised by our extended version top sellers.'
+      description: `Explore our more than ${cardsData.length}  multi-country tours. Let yourself be surprised by our extended version top sellers.`
     },
     buttonProps: {
       text: 'See more trips',
@@ -60,8 +62,9 @@ export const HomePage:FC = () => {
         <StyledHomePageWrapper>
           <StyledHeroImgWrapper >
           <StyledDropdown
+          isMobile={isMobile}
           items={markets}
-           iconDescription='Select market'
+           iconDescription={isMobile ? undefined : 'Select market'}
            onSetSelectedItem={handleSelectMarket}
            defaultSelectedOption={markets[0]}
            />
